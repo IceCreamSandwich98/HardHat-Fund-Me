@@ -1,17 +1,21 @@
 const networkConfig = {
-    31337: {
-        name: "localhost",
-    },
-    // Price Feed Address, values can be obtained at https://docs.chain.link/docs/reference-contracts
+    //goerli chain
     5: {
         name: "goerli",
-        ethUsdPriceFeed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
+        ethUsdPriceFeedAddress: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e"
     },
+    //polygon chain
+    137: {
+        name: "polygon",
+        ethUsdPriceFeedAddress: "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+    }
+    //hardhat?
 }
 
-const developmentChains = ["hardhat", "localhost"]
+const devChains = ["hardhat", "localhost"]
+const decimals = 8
+const initialAnswer = 200000000000
 
-module.exports = {
-    networkConfig,
-    developmentChains,
-}
+//export so other scripts can work with this data
+
+module.exports = { networkConfig, devChains, decimals, initialAnswer }
